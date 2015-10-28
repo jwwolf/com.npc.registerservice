@@ -34,7 +34,7 @@ import com.npc.registerservice.commands.ProductsQuery;
 	}
 	
 	@GET
-	@Path("apiv0/product/{productid}")
+	@Path("apiv0/byproductid/{productid}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Product getProductQuery(@PathParam("productid") UUID productId) {
 		return (new ProductQuery()).
@@ -44,9 +44,9 @@ import com.npc.registerservice.commands.ProductsQuery;
 	}
 	
 	@GET
-	@Path("apiv0/product/byitemlookupcode/{itemlookupcode}")
+	@Path("apiv0/byitemlookupcode/{itemlookupcode}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public org.npc.models.Product getProductQueryByItemLookupCode(@PathParam("itemlookupcode")
+	public Product getProductQueryByItemLookupCode(@PathParam("itemlookupcode")
 						String itemlookupcode){
 		return (new ProductQueryByItemLookupCode()).
 				setItemLookupCode(itemlookupcode).
